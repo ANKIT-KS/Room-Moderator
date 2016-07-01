@@ -12,7 +12,7 @@ sox -d -b 16 -c 1 -r 16k sample.wav trim 0 3
 #sleep 4
 curl -XPOST 'https://api.wit.ai/speech' \
    -i -L \
-   -H "Authorization: Bearer 34SMAJX5RGOVOUOBTNHM5L5PYLXUFEBM" \
+   -H "Authorization: Bearer your API key" \
    -H "Content-Type: audio/wav" \
    --data-binary "@sample.wav" | json -H > auto_input.txt
 c=`cat auto_input.txt | jq -r '.outcomes[].intent'`  #intent value-----Fan,lights,music,all
@@ -54,7 +54,7 @@ fi
 
 fi
 
-curl --data "command_string=$a&position=1" https://api.thingspeak.com/talkbacks/4580/commands.json?api_key=PJ3BES0HDVVULGSQ
+curl --data "command_string=$a&position=1" https://api.thingspeak.com/talkbacks/your channel 2 id/commands.json?api_key="your API key"
 truncate -s0 positionsT.txt
 truncate -s0 /home/ankit/sketchbook/major_2_gui__/noun.txt
 #truncate -s0 /home/ankit/sketchbook/major_2_gui__/sensor_output.txt
